@@ -9,6 +9,7 @@ import { HiHome } from "react-icons/hi";
 
 const Sidebar = () => {
   const { data: session }: { data: any } = useSession();
+  console.log("🚀 ~ Sidebar ~ session:", session);
 
   return (
     <>
@@ -50,7 +51,7 @@ const Sidebar = () => {
         {session && (
           <div className="flex items-center justify-start gap-2 px-5 py-3 rounded-full hover:bg-gray-100 cursor-pointer">
             <img
-              src={session?.user!!.image ?? ""}
+              src={session?.user.image}
               alt="profile"
               className="h-10 w-10 rounded-full"
             />
