@@ -9,7 +9,6 @@ import { HiHome } from "react-icons/hi";
 
 const Sidebar = () => {
   const { data: session }: { data: any } = useSession();
-  console.log("🚀 ~ Sidebar ~ session:", session);
 
   return (
     <>

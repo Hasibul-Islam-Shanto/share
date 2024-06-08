@@ -72,6 +72,7 @@ const Input = () => {
   const handleSubmit = async () => {
     setPostLoading(true);
     const docRef = await addDoc(collection(db, "posts"), {
+      uid: session?.user?.uid,
       name: session?.user?.name,
       username: session?.user?.username,
       email: session?.user?.email,

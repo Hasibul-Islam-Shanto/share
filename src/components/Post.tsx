@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { HiDotsHorizontal } from "react-icons/hi";
 import { PostType } from "../../types/post";
+import Icons from "./Icons";
 // import Icons from "./Icons";
 
 export default function Post({ post, id }: { post: PostType; id: string }) {
@@ -28,7 +29,7 @@ export default function Post({ post, id }: { post: PostType; id: string }) {
         <Link href={`/posts/${id}`}>
           <img src={post?.image} alt="img" className="rounded-2xl mr-2" />
         </Link>
-        {/* <Icons id={id} uid={post.uid} /> */}
+        <Icons id={id} uid={post.uid} />
       </div>
     </div>
   );
