@@ -12,7 +12,7 @@ export default function Post({ post, id }: { post: PostType; id: string }) {
       <img
         src={post?.profileImage}
         alt="user-img"
-        className="h-11 w-11 rounded-full mr-4"
+        className="h-9 w-9 rounded-full mr-4"
       />
       <div className="flex-1">
         <div className="flex items-center justify-between">
@@ -27,7 +27,9 @@ export default function Post({ post, id }: { post: PostType; id: string }) {
           <p className="text-gray-800 text-sm my-3">{post?.text}</p>
         </Link>
         <Link href={`/posts/${id}`}>
-          <img src={post?.image} alt="img" className="rounded-2xl mr-2" />
+          {post?.image && (
+            <img src={post?.image} alt="img" className="rounded-2xl mr-2" />
+          )}
         </Link>
         <Icons id={id} uid={post.uid} />
       </div>

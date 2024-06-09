@@ -89,11 +89,14 @@ const Input = () => {
   };
   return (
     <div className="flex border-b border-gray-200 p-3 space-x-3 w-full">
-      <img
-        src={session?.user?.image}
-        alt="user-img"
-        className="h-11 w-11 rounded-full cursor-pointer hover:brightness-95"
-      />
+      {session && (
+        <img
+          src={session?.user?.image}
+          alt="user-img"
+          className="h-9 w-9 rounded-full cursor-pointer hover:brightness-95"
+        />
+      )}
+
       <div className="w-full divide-y divide-gray-200">
         <textarea
           className="w-full border-none outline-none tracking-wide min-h-[50px] text-gray-700 "
@@ -123,7 +126,12 @@ const Input = () => {
             onChange={addImageToPost}
           />
           <button
-            disabled={text.trim() === "" || postLoading || imageFileUploading}
+            disabled={
+              text.trim() === "" ||
+              postLoading ||
+              imageFileUploading ||
+              !session
+            }
             onClick={handleSubmit}
             className="bg-blue-400 text-white px-4 py-1.5 rounded-full font-bold shadow-md hover:brightness-95 disabled:opacity-50"
           >

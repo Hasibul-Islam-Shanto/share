@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="flex flex-col p-3 justify-between h-screen">
+      <div className="flex flex-col px-2 justify-between h-screen">
         <div className="flex flex-col gap-4 ">
           <Link href="/">
             <Image
@@ -52,13 +52,13 @@ const Sidebar = () => {
             <img
               src={session?.user.image}
               alt="profile"
-              className="h-10 w-10 rounded-full"
+              className="h-8 w-8 rounded-full"
             />
             <div className="flex flex-col items-start justify-start">
-              <span className="text-lg text-gray-800 font-semibold">
+              <span className="text-sm text-gray-800 font-semibold">
                 {session.user?.name}
               </span>
-              <span className="text-md text-gray-600 font-semibold">
+              <span className="text-xs text-gray-600 font-semibold">
                 @{session.user!!.username}
               </span>
             </div>
