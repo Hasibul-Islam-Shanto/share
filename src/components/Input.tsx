@@ -14,7 +14,7 @@ import {
   ref,
   uploadBytesResumable,
 } from "firebase/storage";
-import { useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useEffect, useRef, useState } from "react";
 import { HiOutlinePhotograph } from "react-icons/hi";
 
@@ -115,7 +115,13 @@ const Input = () => {
         )}
         <div className="flex items-center justify-between pt-2.5">
           <HiOutlinePhotograph
-            onClick={() => imagePicker.current?.click()}
+            onClick={() => {
+              if (session) {
+                imagePicker.current?.click();
+              } else {
+                signIn();
+              }
+            }}
             className="h-10 w-10 p-2 text-sky-500 hover:bg-sky-100 rounded-full cursor-pointer"
           />
           <input

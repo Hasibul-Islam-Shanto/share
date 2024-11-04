@@ -87,7 +87,7 @@ export default function Comment({
   }, [likes]);
 
   return (
-    <div className="flex p-3 border-b border-gray-200 hover:bg-gray-50 pl-10">
+    <div className="flex p-3 border-b border-gray-200 hover:bg-gray-50 pl-16">
       <img
         src={comment?.userImage}
         alt="user-img"
